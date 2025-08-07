@@ -1,0 +1,30 @@
+div#page-content p,
+div#page-content li {
+  font-family: var(--serif-font);
+}
+div#page-content h1 {
+  margin-top: 2em;
+}
+div#page-content h2 {
+  margin-top: 1.5em;
+}
+div#page-content h3 {
+  margin-top: 1em;
+}
+div#page-content h4 {
+  margin-top: 0.8em;
+}
+div#page-content h5 {
+  margin-top: 0.5em;
+}
+:root {
+  --link-color: #002bb8;
+  color-scheme: light;
+}
+[data-theme="dark"] {
+  --link-color: #748bd6;
+  color-scheme: dark;
+}
+a {
+  color: var(--link-color);
+}

@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="base" content="/" />
+    <title>SAC13 • SAC13 leap year rule</title>
+    <link rel="stylesheet" href="/inter_subset_en.css?h=d8cf4ad058d6c3a4015b" />
+    <link rel="stylesheet" href="/main.css?h=4a3dff148c520f191505" />
+    <link rel="stylesheet" href="/sac13-custom.css?h=472ce9dea1078dae851d" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content="" />
+    <meta property="og:description" content="" />
+    <meta name="robots" content="index, nofollow" />
+    <meta property="og:title" content="SAC13 leap year rule" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:url" content="&#x2F;tech&#x2F;leap-year-rule&#x2F;" />
+    <meta property="og:site_name" content="SAC13" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self';font-src &#x27;self&#x27; data:;img-src &#x27;self&#x27; https:&#x2F;&#x2F;* data:;media-src &#x27;self&#x27; https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;;style-src &#x27;self&#x27; &#x27;unsafe-inline&#x27;;frame-src player.vimeo.com https:&#x2F;&#x2F;www.youtube-nocookie.com;connect-src 'self';script-src 'self' 'self' 'unsafe-inline' 'wasm-unsafe-eval'" />
+    <noscript><link rel="stylesheet" href="/no_js.css" /></noscript>
+    <script type="text/javascript" src="/js/initializeTheme.min.js"></script>
+    <script defer src="/js/themeSwitcher.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="nav-title">
+          <a class="home-title" href="/">SAC13</a>
+        </div>
+        <div class="nav-navs">
+          <ul>
+            <li>
+              <a class="nav-links no-hover-padding" href="/intro/">Intro</a>
+            </li>
+            <li>
+              <a class="nav-links no-hover-padding" href="/calculator/">
+                Try it!
+              </a>
+            </li>
+            <li>
+              <a class="nav-links no-hover-padding" href="/faq/">FAQ</a>
+            </li>
+            <div class="nav-navs" id="menu-icons-group">
+              <li class="theme-switcher-wrapper js">
+                <div
+                  title="Toggle dark&#x2F;light mode"
+                  class="theme-switcher"
+                  tabindex="0"
+                  role="button"
+                  aria-label="Toggle dark mode"
+                  aria-pressed="false"></div>
+                <div
+                  title="Reset mode to default"
+                  class="theme-resetter arrow"
+                  tabindex="0"
+                  role="button"
+                  aria-hidden="true"
+                  aria-label="Reset mode to default"></div>
+              </li>
+            </div>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <div class="content">
+      <h1 class="title-container section-title bottom-divider">
+        SAC13 leap year rule
+      </h1>
+      <div id="page-content">
+        <main>
+          <h2 id="example">Example</h2>
+          <p>Let’s find out if 12’033 is a leap year:</p>
+          <ol>
+            <li>12’033 + 199 =&gt; 12’232</li>
+            <li>12’232 mod 293 =&gt; 219</li>
+            <li>219 mod 33 =&gt; 21</li>
+            <li>21 mod 4 =&gt; 1</li>
+            <li>The result is 1, so it’s a leap year</li>
+          </ol>
+          <h2 id="why-is-the-leap-year-rule-the-way-it-is">
+            Why is the leap year rule the way it is?
+          </h2>
+          <p>
+            A year is not exactly 365 days long - it’s a bit longer. This is why
+            there are leap years and (solar) calendars typically have leap year
+            rules to match the length of the year. The main goal of SAC13’s leap
+            year rule is to keep the March equinox as close as possible to the
+            start of the year (1ˢᵗ March 00:00 UTC), and to do that, we need
+            to first find out how long a year really is.
+          </p>
+          <p>
+            The long story is complicated, and the short story is that there are
+            multiple different “years”, and all of them mean slightly different
+            things. The two main distinctions are the
+            <a
+              rel="noopener"
+              target="_blank"
+              href="https://en.wikipedia.org/wiki/Sidereal_year">
+              Sidereal year
+            </a>
+            and the
+            <a
+              rel="noopener"
+              target="_blank"
+              href="https://calendars.fandom.com/wiki/Tropical_year">
+              Tropical year
+            </a>
+            . Solar Calendars try to match the Tropical year, but even here
+            there are important differences, because the
+            <em>mean tropical year</em>
+            and the
+            <em>vernal equinox year</em>
+            are slightly different and depending on the calendar’s goals it’s
+            important what to choose as a target. Many calendars aim to anchor
+            the March equinox to a specific date or near the start of the year
+            but most other calendars (even new modern proposals) get it wrong
+            and try to track the
+            <em>mean tropical year</em>
+            , which causes the March equinox to slowly drift away from the
+            intended position.
+          </p>
+          <p>
+            The length of the March (vernal/northward) equinox year, which SAC13
+            tries to match, is approximately 365.24237404 days. This length
+            actually changes and is (very, very!) slowly getting longer, but
+            that doesn’t really matter in practice. To make that into a leap
+            year algorithm, one typically uses
+            <a
+              rel="noopener"
+              target="_blank"
+              href="https://en.wikipedia.org/wiki/Continued_fraction">
+              continued fractions
+            </a>
+            and similar tools to find good rational approximations with small
+            denominators and then construct cycles with that.
+          </p>
+          <p>
+            The main idea behind the SAC13 leap year algorithm is a $
+            \frac{71}{293} = 0.2423208… $ cycle (meaning 71 leap years over a
+            period of 293 years), which itself consists of eight $ \frac{8}{33}
+            = 0.\overline{24} $ cycles and one $ \frac{6}{25} = 0.2413793… $
+            cycle. That’s where the magic numbers “293” and “33” come from. Now
+            that the frequency of the leap years is set, we have to determine
+            the offset - the number that is added in the first step - so we
+            actually leap around the correct time. Because the big cycle is 293
+            years long, there are several options. So I checked all the offsets
+            against
+            <a
+              rel="noopener"
+              target="_blank"
+              href="https://stellafane.org/misc/equinox.html">
+              this model
+            </a>
+            (actually a Rust port of it) and picked the one that had the most
+            matches in some thousand years. The match evaluation function was
+            also weighted, so that matches in the more distant future are less
+            important, because the model is a polynomial and is only valid up
+            until the year 3000 and I didn’t want to pick an offset that tries
+            to match a model outside its valid range. The offset that fell out
+            of this process was “199”, and that’s where this magic number came
+            from.
+          </p>
+          <p>
+            Because SAC13 leap years are calculated and not measured there will
+            be close calls (when the March equinox is close to 12:00 UTC) where
+            the year doesn’t start on the closest day to the March equinox, but
+            on the second closest day, because of unforeseen shifts and the
+            simplicity of the leap year rule. This level of accuracy is far
+            above the Gregorian Calendar and probably more than enough for any
+            civil and many scientific use-cases.
+          </p>
+          <p>
+            This leap year rule likely works for a few millennia without any
+            change.
+          </p>
+          <h2 id="why-not-use-a-simpler-leap-year-rule">
+            Why not use a simpler leap year rule?
+          </h2>
+          <p>
+            SAC13 tries to closely align the year with the seasons. That’s not
+            really possible with very simple rules like in the Gregorian
+            Calendar. When the Julian, and later the Gregorian, Calendar was
+            invented it was important that it’s easy to calculate if a given
+            year is a leap year. There were no computers or calculators and it
+            thus was of great value that you could tell, just by looking at a
+            year, if it’s a leap year or not.
+          </p>
+          <p>
+            Today, I believe the only people who really think about leap years
+            are people with a special connection to leap days, for example,
+            because of a birthday, wedding day, etc., or because someone
+            coincidentally saw the 29ᵗʰ February on their mobile phone
+            calendar.
+          </p>
+          <h2 id="march-equinox-rule-based-vs-measured">
+            March equinox rule-based vs measured
+          </h2>
+          <p>
+            SAC13 is not the only calendar that tries to start the year close to
+            the March equinox. The
+            <a
+              rel="noopener"
+              target="_blank"
+              href="https://en.wikipedia.org/wiki/Solar_Hijri_calendar">
+              Solar Hijri calendar
+            </a>
+            for example is even used as the official calendar in Iran and also
+            starts with the March equinox. It’s often considered to be the most
+            accurate calendar and in a way that’s actually true, because they
+            don’t have a leap year rule at all. The March equinox is measured to
+            determine which years are leap years. Typically this can be done
+            many years into the future, but there are situations where the March
+            equinox is close to a “tipping-point”, where only minutes or even
+            seconds can make a difference if a year is a leap year or not. In a
+            worst case scenario this could change a year retroactively.
+          </p>
+          <p>
+            Let’s imagine (just an example, and numbers are made up, and we use
+            UTC instead of UTC+03:30) we are currently in the year 100 and the
+            prediction of the next March equinox for the start of year 101 is
+            11:59 (UTC). Because of that year 100 will be a common year (365
+            days) because 11:59 is closer to UTC 00:00 on day 365 than UTC 00:00
+            on day 366. We continue living through the year 100 when updated
+            astronomical measurements during the last quarter of the year show,
+            that the March equinox will actually be at 12:02 UTC. Now we have a
+            problem, because we have to retroactively make the year 100 from a
+            common year to a leap year and everything that happened during that
+            year after the leap day has to be shifted by one day. In practice,
+            nobody in their right mind would shift the dates around during a
+            year and just live with the fact that the start of the next year
+            isn’t as close as it could have been to the March equinox.
+          </p>
+          <p>
+            Leap year patterns that are derived from measurement also have the
+            big issue that automated systems and software have to constantly be
+            kept up to date with leap year lists or “cheat” and use an
+            algorithmic approach anyway, which has the bonus downside that there
+            is no agreed-upon standard on which algorithm to use because the
+            calendar, per definition, uses measurements instead of algorithms.
+          </p>
+          <p>
+            That’s why SAC13 uses rule-based leap years. The rule is accurate
+            enough to keep the calendar stable for a very long time, it’s
+            unambiguous and even easy to implement on 8-bit microcontrollers
+            without heap allocations, and every few hundred years we might leap
+            a year too early or too late but it doesn’t matter, because
+            everybody will agree on which years are leap years and which years
+            are not.
+          </p>
+          <h2 id="difference-between-sync-day-leap-day-and-year-day">
+            Difference between Sync Day, Leap Day and Year Day
+          </h2>
+          <p>
+            Every 29ᵗʰ is a sync day, so Leap Day is a sync day, and Year Day
+            is also a sync day. All years, common years with 365 days and leap
+            years with 366 days have a Year Day on 29ᵗʰ Addenduary. Leap years
+            have an additional sync day, namely the Leap Day on 29ᵗʰ August.
+          </p>
+        </main>
+      </div>
+      <div id="button-container">
+        <div id="toc-floating-container">
+          <input type="checkbox" id="toc-toggle" class="toggle" />
+          <label for="toc-toggle" class="overlay"></label>
+          <label
+            for="toc-toggle"
+            id="toc-button"
+            class="button"
+            title="Toggle Table of Contents">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+              <path
+                d="M414.82-193.094q-18.044 0-30.497-12.32-12.453-12.319-12.453-30.036t12.453-30.086q12.453-12.37 30.497-12.37h392.767q17.237 0 29.927 12.487 12.69 12.486 12.69 30.203 0 17.716-12.69 29.919t-29.927 12.203H414.82Zm0-244.833q-18.044 0-30.497-12.487Q371.87-462.9 371.87-480.45t12.453-29.92q12.453-12.369 30.497-12.369h392.767q17.237 0 29.927 12.511 12.69 12.512 12.69 29.845 0 17.716-12.69 30.086-12.69 12.37-29.927 12.37H414.82Zm0-245.167q-18.044 0-30.497-12.32t-12.453-30.037q0-17.716 12.453-30.086 12.453-12.369 30.497-12.369h392.767q17.237 0 29.927 12.486 12.69 12.487 12.69 30.203 0 17.717-12.69 29.92-12.69 12.203-29.927 12.203H414.82ZM189.379-156.681q-32.652 0-55.878-22.829t-23.226-55.731q0-32.549 23.15-55.647 23.151-23.097 55.95-23.097 32.799 0 55.313 23.484 22.515 23.484 22.515 56.246 0 32.212-22.861 54.893-22.861 22.681-54.963 22.681Zm0-245.167q-32.652 0-55.878-23.134-23.226-23.135-23.226-55.623 0-32.487 23.467-55.517t56.12-23.03q32.102 0 54.721 23.288 22.62 23.288 22.62 55.775 0 32.488-22.861 55.364-22.861 22.877-54.963 22.877Zm-.82-244.833q-32.224 0-55.254-23.288-23.03-23.289-23.03-55.623 0-32.333 23.271-55.364 23.272-23.03 55.495-23.03 32.224 0 55.193 23.288 22.969 23.289 22.969 55.622 0 32.334-23.21 55.364-23.21 23.031-55.434 23.031Z" />
+            </svg>
+          </label>
+          <div class="toc-content">
+            <div class="toc-container">
+              <ul>
+                <li><a href="/tech/leap-year-rule/#example">Example</a></li>
+                <li>
+                  <a
+                    href="/tech/leap-year-rule/#why-is-the-leap-year-rule-the-way-it-is">
+                    Why is the leap year rule the way it is?
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/tech/leap-year-rule/#why-not-use-a-simpler-leap-year-rule">
+                    Why not use a simpler leap year rule?
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/tech/leap-year-rule/#march-equinox-rule-based-vs-measured">
+                    March equinox rule-based vs measured
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/tech/leap-year-rule/#difference-between-sync-day-leap-day-and-year-day">
+                    Difference between Sync Day, Leap Day and Year Day
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <a
+          href="#"
+          id="top-button"
+          class="no-hover-padding"
+          title="Go to the top of the page">
+          <svg viewBox="0 0 20 20" fill="currentColor">
+            <path
+              d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z" />
+          </svg>
+        </a>
+      </div>
+      <link rel="stylesheet" href="/katex.min.css" />
+      <script defer src="/js/katex.min.js"></script>
+      <span id="copy-success" class="hidden">Copied!</span>
+      <span id="copy-init" class="hidden">Copy code to clipboard</span>
+      <script defer src="/js/copyCodeToClipboard.min.js"></script>
+    </div>
+    <footer>
+      <section>
+        <nav class="socials nav-navs"></nav>
+        <nav class="nav-navs"></nav>
+        <div class="credits">
+          <small>
+            Powered by
+            <a rel="noopener" target="_blank" href="https://www.getzola.org">
+              Zola
+            </a>
+            &amp;
+            <a
+              rel="noopener"
+              target="_blank"
+              href="https://github.com/welpo/tabi">
+              tabi
+            </a>
+          </small>
+        </div>
+      </section>
+    </footer>
+  </body>
+</html>

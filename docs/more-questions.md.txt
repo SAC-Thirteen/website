@@ -1,0 +1,123 @@
++++
+title = "SAC13 FAQs"
+template = "info-page.html"
++++
+
+
+
+
+
+
+
+# why leap day not on last day to simplify calculations?
+
+
+
+ It's definitely nothing radically new and there are other proposals with similar ideas, but non of the ones I read really resonated with me, because they fixed some issues, but then stopped half-way through.
+
+
+
+
+
+<!-- ----------------------------------- -->
+
+
+
+
+
+# Rationale
+
+
+
+
+The main reason, why there can't be a perfect calendar is because the real world is messy. It would be simple if everything was symmetrical and the earths rotation around itself and around the sun would be a perfect integer factor, but that's not the case. The earth is [not a perfect sphere](https://en.wikipedia.org/wiki/Figure_of_the_Earth). The [axis is tilted](https://en.wikipedia.org/wiki/Axial_tilt) and this tilt [isn't even constant](https://en.wikipedia.org/wiki/Axial_precession). Earths rotation around itself is not constant and even depends on things like [earth-quakes](https://www.jpl.nasa.gov/news/nasa-details-earthquake-effects-on-the-earth/). The path around the sun is not a circle [and not even an ellipse](https://en.wikipedia.org/wiki/Perturbation_(astronomy)) and is also [tilted and changes all the time](https://en.wikipedia.org/wiki/Orbital_inclination).
+
+Because of those (and way more) imperfections, there are no perfect or simple models of date and time. That's why we need [Leap years/days](https://en.wikipedia.org/wiki/Leap_year). We can even measure time so accurately with atomic clocks ([TAI](https://en.wikipedia.org/wiki/International_Atomic_Time)), that we also need [Leap Seconds](https://en.wikipedia.org/wiki/Leap_second) to keep [UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time) (civil time basis) and [UT1](https://en.wikipedia.org/wiki/UT1) (time based on Earths actual rotation) in sync. The solar system doesn't care if the number of days in a year is convenient or not. Things are the way they are and we have to design around those imperfections.
+
+But even though there is no perfect calendar, we can still try to make it better than it is today.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## When do other calendars break in the future?
+
+- Google Calendar
+- MS Windows Calendar
+- Ubuntu
+- iPhone
+- Android
+- etc.
+
+
+
+
+## Stuff
+
+
+
+# Ideas and 
+
+
+The following things should be taken into consideration and the calendar adopted accordingly
+
+- "Namenstage"?
+- Easter
+- Leap weep to not break the week cycle
+
+  - CON: Statistiken (zu welchem Monat), Rechnungen, etc.
+  - Maybe focus on civil and scientific stuff because some cultures and religions have their own calendar anyways
+    - But "Sunday" being a "free" day in the civil calendar might be important for their "events"
+    - https://aa.usno.navy.mil/faq/calendars
+      - Gregorian
+      - Jewish
+      - Islamic
+      - Indian
+      - Chinese
+      - Julian
+  - CON: The calendar will be less accurate (drift more)
+    - Bad for agriculture? But weather probably more important than ± 3 days drift with regards to the solar year
+    - Hard Science probably doesn't care because they are good at calculating stuff and don't rely to much on civil calendars anyway.
+  - PRO: The calendar wouldn't break the week cycle which is important for religious people
+
+- Maybe start year with Winter solstice
+
+  - It will break the naming scheme (Sep, Oct, Nov, Dec) unless we shift a lot of stuff
+    - Names of the months than might no longer roughly match with the seasons we experience
+  - This will bring the years into more overlap (instead of starting with march)
+  - ChatGPT made a good argument with
+    - In many cultures and traditions, the winter solstice has been a significant event since ancient times.
+    - In many parts of the world, the winter solstice marks the beginning of the coldest and darkest part of the year. By starting the year with the winter solstice, the calendar acknowledges and reflects the seasonal changes that many people experience. In contrast, starting the year with the March equinox may not have as much significance in terms of seasonal changes, as it falls in between the winter and spring seasons.
+  - This probably also fixes the offset of 1 year with leap years
+
+
+
+
+
+- Explore and implement ways to "gently" switch from the gregorian calendar to SAC13
+
+
+
+vernal equinox year:
+https://astronomy.stackexchange.com/questions/50727/are-two-definitions-of-a-tropical-year-inequivalent
+365.242374 
+
+https://calendars.fandom.com/wiki/Tropical_year <------- HERE!!
+Check this RULE: https://www.timeanddate.com/date/iran-leap-year.html
+
+
+
+# Tools
+| What                     | Url                                                    |
+| ------------------------ | ------------------------------------------------------ |
+| Faction Approximation    | https://www.bee-man.us/math/fraction_approximation.htm |
+| March Equinox Calculator | https://stellafane.org/misc/equinox.html               |

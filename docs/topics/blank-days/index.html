@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="base" content="/" />
+    <title>SAC13 • Blank days</title>
+    <link rel="stylesheet" href="/inter_subset_en.css?h=d8cf4ad058d6c3a4015b" />
+    <link rel="stylesheet" href="/main.css?h=4a3dff148c520f191505" />
+    <link rel="stylesheet" href="/sac13-custom.css?h=472ce9dea1078dae851d" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content="" />
+    <meta property="og:description" content="" />
+    <meta name="robots" content="index, nofollow" />
+    <meta property="og:title" content="Blank days" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:url" content="&#x2F;topics&#x2F;blank-days&#x2F;" />
+    <meta property="og:site_name" content="SAC13" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self';font-src &#x27;self&#x27; data:;img-src &#x27;self&#x27; https:&#x2F;&#x2F;* data:;media-src &#x27;self&#x27; https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;;style-src &#x27;self&#x27; &#x27;unsafe-inline&#x27;;frame-src player.vimeo.com https:&#x2F;&#x2F;www.youtube-nocookie.com;connect-src 'self';script-src 'self' 'self' 'unsafe-inline' 'wasm-unsafe-eval'" />
+    <noscript><link rel="stylesheet" href="/no_js.css" /></noscript>
+    <script type="text/javascript" src="/js/initializeTheme.min.js"></script>
+    <script defer src="/js/themeSwitcher.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="nav-title">
+          <a class="home-title" href="/">SAC13</a>
+        </div>
+        <div class="nav-navs">
+          <ul>
+            <li>
+              <a class="nav-links no-hover-padding" href="/intro/">Intro</a>
+            </li>
+            <li>
+              <a class="nav-links no-hover-padding" href="/calculator/">
+                Try it!
+              </a>
+            </li>
+            <li>
+              <a class="nav-links no-hover-padding" href="/faq/">FAQ</a>
+            </li>
+            <div class="nav-navs" id="menu-icons-group">
+              <li class="theme-switcher-wrapper js">
+                <div
+                  title="Toggle dark&#x2F;light mode"
+                  class="theme-switcher"
+                  tabindex="0"
+                  role="button"
+                  aria-label="Toggle dark mode"
+                  aria-pressed="false"></div>
+                <div
+                  title="Reset mode to default"
+                  class="theme-resetter arrow"
+                  tabindex="0"
+                  role="button"
+                  aria-hidden="true"
+                  aria-label="Reset mode to default"></div>
+              </li>
+            </div>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <div class="content">
+      <h1 class="title-container section-title bottom-divider">Blank days</h1>
+      <div id="page-content">
+        <main>
+          <p>
+            The tropical year is a bit longer than 365 days.
+            <a href="/tech/calendar-layouts/">Coincidentally</a>
+            364 (with its prime factors 2, 2, 7, 13) is divisible by seven, the
+            length of a week and also by four, to get quarters. Many calendar
+            proposals (including SAC13) are built around that 364 day year,
+            because it allows for especially simple and pretty calendar layouts.
+            But a year is longer than 364 days, so unless we want the calendar
+            to drift a lot, we have to somehow cram in a day (or two on leap
+            years) but without ruining too much of the pretty layout we got by
+            designing around 364 days.
+          </p>
+          <p>
+            Some calendar proposals (e.g., International Fixed Calendar,
+            Positivist calendar, World Calendar) try to fix that by defining
+            those intercalated days to be outside of any month and week with no
+            ordinal number. At a quick glance it might look like a good idea,
+            because defining them outside of weeks and months allows the rest of
+            the calendar to be extra pretty because there is never a 29ᵗʰ of
+            anything. Some proponents of such calendars even claim that they
+            don’t break the week cycle because those days are outside of weeks.
+          </p>
+          <p>
+            But if you think about it, it’s not a good idea at all. It’s like
+            children “cleaning up” their room by sweeping everything under the
+            bed and then defining “under the bed” as somehow outside of the
+            room. It’s also bad because, between the years those calendars were
+            proposed and today, computers happened. It would be a nightmare of
+            edge cases to define those days outside of months and weeks, and
+            without ordinal numbers. What would the calendar on your smartphone
+            look like on or around that day? It’s not impossible but it’s
+            impractical and unnecessarily complicated. What would an
+            ISO-8601-like date format look like for that day?
+            <code>2000-06-27</code>
+            ,
+            <code>2000-06-28</code>
+            ,
+            <code>2000-LeapDay</code>
+            ,
+            <code>2000-07-01</code>
+            ? How would an accountant type that on their Numpad? It would also
+            be completely undefined which period to attribute stuff to, that
+            happens on a Leap Day or Year Day. If you use electricity on that
+            day, is that billed in the previous month or the next month? Or do
+            you get a separate bill just for Leap Days? So, in practice the Leap
+            Day and Year Day will always be considered part of a week or month,
+            but if the calendar system defines them to be somehow outside of
+            weeks and months, everybody will just start doing their own thing
+            (like using
+            <code>2000-06-29</code>
+            or
+            <code>2000-07-00</code>
+            instead of
+            <code>2000-LeapDay</code>
+            ) and the mess would be perfect.
+          </p>
+          <p>
+            SAC13 takes a more honest approach. The reason why we have those
+            sync days is because we want to sync up the calendar with reality,
+            and to make sure everybody agrees on where to attribute stuff to
+            that happens on sync days. They have a clearly defined week and
+            month and are also numbered and have a name for the day of the week
+            (‘Syncday’). Of course it’s still an edge case, but a fairly trivial
+            one.
+          </p>
+        </main>
+      </div>
+      <div id="button-container">
+        <a
+          href="#"
+          id="top-button"
+          class="no-hover-padding"
+          title="Go to the top of the page">
+          <svg viewBox="0 0 20 20" fill="currentColor">
+            <path
+              d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z" />
+          </svg>
+        </a>
+      </div>
+      <link rel="stylesheet" href="/katex.min.css" />
+      <script defer src="/js/katex.min.js"></script>
+      <span id="copy-success" class="hidden">Copied!</span>
+      <span id="copy-init" class="hidden">Copy code to clipboard</span>
+      <script defer src="/js/copyCodeToClipboard.min.js"></script>
+    </div>
+    <footer>
+      <section>
+        <nav class="socials nav-navs"></nav>
+        <nav class="nav-navs"></nav>
+        <div class="credits">
+          <small>
+            Powered by
+            <a rel="noopener" target="_blank" href="https://www.getzola.org">
+              Zola
+            </a>
+            &amp;
+            <a
+              rel="noopener"
+              target="_blank"
+              href="https://github.com/welpo/tabi">
+              tabi
+            </a>
+          </small>
+        </div>
+      </section>
+    </footer>
+  </body>
+</html>

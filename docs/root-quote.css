@@ -1,0 +1,17 @@
+div.content {
+  margin-top: 0px;
+}
+.quote-container {
+  display: grid;
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+  font-size: 1.3em;
+  font-style: italic;
+}
+.quote {
+  grid-area: 1/1/2/2;
+  width: 100%;
+  transition: opacity 1s ease-in-out;
+  font-family: var(--serif-font);
+}

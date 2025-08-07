@@ -1,0 +1,11 @@
+:root {
+  --primary-color: #d33c5c;
+}
+[data-theme="dark"] {
+  --primary-color: #fabed2;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --primary-color: #fabed2;
+  }
+}

@@ -1,0 +1,163 @@
+
+# Sabbath article ?
+
+
+## HIGH
+# - Negative roll-over not working: 31.12.00-1
+# - Finalize fast - maybe take content out?
+# - Fix articles:
+#     - HHPC not so harsh?
+#     - SAC13 week article is a mess
+#     - vs others
+#     - vs symmetry
+#     - cost and effort pretty short
+# - Check for typos
+# - Rust SAC13 crate?
+# - No referenced weekdays
+
+## MID
+# - 13 is prime (but so is 7)
+# - quarters weeks vs full months
+# - Github Actions for deployments?
+# - Other Tabi changes (scripts, stylesheets?)
+# - Calculator title 404 tabi if empty, maybe use different method to hide titles 
+# - list more benefits in introduction
+# - reserve nuget, crates.io, npm packages, python?
+# - documented transition path?
+
+## LOW
+# - Mono repo with reference implementations
+# - HTML zola build prettify
+# - maybe even js pretty formatter?
+# - Format external links
+# - javascript reference implementation, use that implementation to show a "today is the XYZ date at the beginning"
+# - check if other equinox and solstices are  matching the gregorian months
+# - Calculator text + fragment URL dates
+# - fragment url to allow for calendar calculation inputs as URLs
+
+## Very Low
+# - open for suggestions / contact? Inline comment/suggestion tool.
+# - send to some calendar youtubers
+# - calculator support ranges (for example only years, or years and months and day  patterns like  "4th July", etc.)
+
+#  https://community.smartsheet.com/discussion/8451/calendar-view-month-has-6-weeks
+
+
+# >  try stuff with SOLEX ( https://en.wikipedia.org/wiki/Solex_(software) )
+
+# >  maybe use northward equinoctial year
+# > http://web.archive.org/web/20010502085156/http://home.earthlink.net/~scassidy/
+# > check http://individual.utoronto.ca/kalendis/leap/index.htm#ne
+# >
+# > remove claims about 100'000 years
+# >
+# >  season aligned does not mean all seasons are aligned, thats not possible because different lengths
+
+#  Changes I'm open about
+#   - Name of the calendar, months and days of the week
+#   - Changes to the leap year rule if there are good reasons for that and they aren't too complex (no floating point arithmetic).
+#   -
+
+# http://dialectrix.com/ideas/barlow.html ??
+
+# > Huge effort: calendar in hardware, cars, etc. camera timestamps, already perpetual calendar templates (birthday calendars)
+# > A large number of protocols (IoT devices, measurements, telemetry)
+
+# render year layout in Rust? and without seasons but with Q1, Q2, Q3, Q4 and mention seasons in another page (including (new) meterological seasons)
+
+
+
+# On a more technical level, there is also the leap-year rule, that is typically implemented with the modulo operation, which is [implemented differently](https://en.wikipedia.org/wiki/Modulo#In_programming_languages) for many programming languages for negative numbers so one has to be extra careful to not mess up the leap year implementation for negative years. This is also the reason why many proleptic Gregorian Calendar implementations break down at negative years. (when implemented carefully)
+
+#  TODO: Informally the millennium indicator can also be skipped.
+
+
+
+TODO: fix below here
+
+
+Here is a collection of issues I typically have with many other proposals.
+
+## Not even the typical issues with the Gregorian Calendar
+I listed the issues I have with the Gregorian Calendar [here](@/sac13-vs/gc.md)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Or some of them just rename the months, so September - December are in the correct place again but this will result in a calendar where the Months shift all over the place. Some of them try to be accurate with leap years, but try to match the mean tropical year instead of the March equinox year. With SAC13, even though we added a month many dates stay reasonably close to where they were in the Gregorian Calendar (GC).
+
+
+
+
+# More comparisons  
+
+
+## Armelin calendar and Invariable Calendar
+Roughly identical to the World Calendar with the same major issue of "blank" days. But unlike in the World Calendar both those calendars start their weeks on Monday, which is a win in my book. So if you like the World Calendar, but not the idea of starting the week on Sunday you should check out those calendars.
+
+## Positivist calendar
+Classic thirteen month calendar with typical "blank" day issue but with different weekday and month names.
+
+## Pax Calendar
+Thirteen month leap week calendar, where the leap week is inserted as the second to last month, which causes December to be sometimes the 13^th^ and sometimes the 14^th^ month, which I think is pretty funny given the fact that Latin _decem_ literally means ten. This would also be a nightmare for software implementations because the last month is always named _December_ but has a different ordinal on leap years.
+
+## World Season Calendar
+Even though it doesn't have "months" it's a classical 13-month-layout, but prioritizes the season/quarter split. The seasons are identified by the letters A, B, C, D and days are numbered 1 to 91 in those seasons, so D-21 or A-73. The intercal days _Leap Day_ and _Year Day_ are B-92 and D-92 respectively so it's not as bad as "blank" days, but those days don't have a weekday in the original proposal. Even though it has  season in its name (like SAC13), the Seasons are off because it uses the same New Year as the Gregorian Calendar. It also uses Monday as the start of the week.
+
+
+
+
+to meet me on 15^th^ April
+
+
+
+Coming up with new weekday names is har
+
+I thought about it a lot, and coming up with weekday names th
+
+
+
+
+This would prevent (or at least make it very hard) to use SAC13 in parallel with the Gregorian Calendar, which is practically a requirement for all calendar proposals, because a globally coordinated switch with a single transition day is certainly not going to happen.
+
+Even if some sort of magic spell allows us to effortlessly switch to the new calendar it would still make it hard to use the calendar proleptically, because past dates would still end up with different weekdays in SAC13 because projecting the calendar
+
+
+
+
+make adoption harder and make it even harder to use it proleptically.
+
+
+it would make adoption harder and
+
+Why are we dropping weekday names at all, 
+
+
+
+
+Looking for something more classical? You can use the names suggested in the following list. 
+
+
+
+Here is a set of weekday names you can give a try. I'd call sync days (D8) just "Syncday" in all of those
+
+
+| N°  |           | Planets | Greek    | Latin    | Greek 2 | Rainbow  |
+| --- | --------- | ------- | -------- | -------- | ------- | -------- |
+| 1   | Onesday   | Mercday | Monoday  | Primday  | Protay  | Reday    |
+| 2   | Twosday   | Venday  | Diday    | Seconday | Deutay  | Orangday |
+| 3   | Threesday | Marday  | Triday   | Tertay   | Tritay  | Yelloday |
+| 4   | Foursday  | Jupiday | Tetraday | Quarday  | Tetray  | Greenday |
+| 5   | Fivesday  | Satuday | Pentaday | Quinday  | Pemtay  | Blueday  |
+| 6   | Sixday    | Urday   | Hexaday  | Sexday   | Hektay  | Indaygo  |
+| 7   | Sevensday | Nepday  | Heptaday | Septay   | Habday  | Violay   |

@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="base" content="/" />
+    <title>SAC13 • Why 13 months?</title>
+    <link rel="stylesheet" href="/inter_subset_en.css?h=d8cf4ad058d6c3a4015b" />
+    <link rel="stylesheet" href="/main.css?h=4a3dff148c520f191505" />
+    <link rel="stylesheet" href="/sac13-custom.css?h=472ce9dea1078dae851d" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content="" />
+    <meta property="og:description" content="" />
+    <meta name="robots" content="index, nofollow" />
+    <meta property="og:title" content="Why 13 months?" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:url" content="&#x2F;tech&#x2F;calendar-layouts&#x2F;" />
+    <meta property="og:site_name" content="SAC13" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self';font-src &#x27;self&#x27; data:;img-src &#x27;self&#x27; https:&#x2F;&#x2F;* data:;media-src &#x27;self&#x27; https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;;style-src &#x27;self&#x27; &#x27;unsafe-inline&#x27;;frame-src player.vimeo.com https:&#x2F;&#x2F;www.youtube-nocookie.com;connect-src 'self';script-src 'self' 'self' 'unsafe-inline' 'wasm-unsafe-eval'" />
+    <noscript><link rel="stylesheet" href="/no_js.css" /></noscript>
+    <script type="text/javascript" src="/js/initializeTheme.min.js"></script>
+    <script defer src="/js/themeSwitcher.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="nav-title">
+          <a class="home-title" href="/">SAC13</a>
+        </div>
+        <div class="nav-navs">
+          <ul>
+            <li>
+              <a class="nav-links no-hover-padding" href="/intro/">Intro</a>
+            </li>
+            <li>
+              <a class="nav-links no-hover-padding" href="/calculator/">
+                Try it!
+              </a>
+            </li>
+            <li>
+              <a class="nav-links no-hover-padding" href="/faq/">FAQ</a>
+            </li>
+            <div class="nav-navs" id="menu-icons-group">
+              <li class="theme-switcher-wrapper js">
+                <div
+                  title="Toggle dark&#x2F;light mode"
+                  class="theme-switcher"
+                  tabindex="0"
+                  role="button"
+                  aria-label="Toggle dark mode"
+                  aria-pressed="false"></div>
+                <div
+                  title="Reset mode to default"
+                  class="theme-resetter arrow"
+                  tabindex="0"
+                  role="button"
+                  aria-hidden="true"
+                  aria-label="Reset mode to default"></div>
+              </li>
+            </div>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <div class="content">
+      <h1 class="title-container section-title bottom-divider">
+        Why 13 months?
+      </h1>
+      <div id="page-content">
+        <main>
+          <p>In short, it’s the only option if we want</p>
+          <ul>
+            <li>a fixed calendar</li>
+            <li>equal months</li>
+            <li>equal quarters</li>
+            <li>seven-day weeks</li>
+          </ul>
+          <p>
+            To create a calendar layout, you first have to start with a cycle
+            length. Because nature is messy, it’s never an exact integer. For
+            Earth solar calendars, this is slightly less 365.2424 days (see
+            <a href="/tech/leap-year-rule/">leap years</a>
+            for details). So we need years with fewer days than our target
+            values and years with more days than our target value, and some
+            rules on how often and when we switch between those years.
+          </p>
+          <p>
+            Because we typically want to subdivide our year into smaller,
+            roughly equal parts like quarters, months, and weeks, it helps to
+            list prime factorizations for some days around the 365-day mark.
+          </p>
+          <p>Columns:</p>
+          <ol>
+            <li>Day count for that year</li>
+            <li>Difference to a year of 365 days</li>
+            <li>Prime factors</li>
+            <li>Divisible by four (equal quarters)</li>
+            <li>Divisible by seven (equal weeks)</li>
+            <li>
+              Possible factors that could be considered a “month” (equal months)
+            </li>
+            <li>Equal quarter length</li>
+          </ol>
+          <table>
+            <thead>
+              <tr>
+                <th>Days</th>
+                <th style="text-align: right">Δ</th>
+                <th style="text-align: right">Prime factors</th>
+                <th>4</th>
+                <th>7</th>
+                <th>“Month”</th>
+                <th>Quarter</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>356</td>
+                <td style="text-align: right">9</td>
+                <td style="text-align: right">$ 2^2 \times 89 $</td>
+                <td>✅</td>
+                <td></td>
+                <td></td>
+                <td>$ 89 $</td>
+              </tr>
+              <tr>
+                <td>357</td>
+                <td style="text-align: right">8</td>
+                <td style="text-align: right">$ 3 \times 7 \times 17 $</td>
+                <td></td>
+                <td>✅</td>
+                <td>$ 21 $</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>358</td>
+                <td style="text-align: right">7</td>
+                <td style="text-align: right">$ 2 \times 179 $</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>359</td>
+                <td style="text-align: right">6</td>
+                <td style="text-align: right">$ 359 $</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>360</td>
+                <td style="text-align: right">5</td>
+                <td style="text-align: right">$ 2^3 \times 3^2 \times 5 $</td>
+                <td>✅</td>
+                <td></td>
+                <td>$ 20, 24, 30, 36, 40 $</td>
+                <td>$ 90 $</td>
+              </tr>
+              <tr>
+                <td>361</td>
+                <td style="text-align: right">4</td>
+                <td style="text-align: right">$ 19^2 $</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>362</td>
+                <td style="text-align: right">3</td>
+                <td style="text-align: right">$ 2 \times 181 $</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>363</td>
+                <td style="text-align: right">2</td>
+                <td style="text-align: right">$ 3 \times 11^2 $</td>
+                <td></td>
+                <td></td>
+                <td>$ 33 $</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>364</td>
+                <td style="text-align: right">1</td>
+                <td style="text-align: right">$ 2^2 \times 7 \times 13 $</td>
+                <td>✅</td>
+                <td>✅</td>
+                <td>$ 26, 28 $</td>
+                <td>$ 91 $</td>
+              </tr>
+              <tr>
+                <td>365</td>
+                <td style="text-align: right">0</td>
+                <td style="text-align: right">$ 5 \times 73 $</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>365.2…</td>
+                <td style="text-align: right">🎯</td>
+                <td style="text-align: right"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>366</td>
+                <td style="text-align: right">-1</td>
+                <td style="text-align: right">$ 2 \times 3 \times 61 $</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>367</td>
+                <td style="text-align: right">-2</td>
+                <td style="text-align: right">$ 367 $</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>368</td>
+                <td style="text-align: right">-3</td>
+                <td style="text-align: right">$ 2^4 \times 23 $</td>
+                <td>✅</td>
+                <td></td>
+                <td>$ 23 $</td>
+                <td>$ 92 $</td>
+              </tr>
+              <tr>
+                <td>369</td>
+                <td style="text-align: right">-4</td>
+                <td style="text-align: right">$ 3^2 \times 41 $</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>370</td>
+                <td style="text-align: right">-5</td>
+                <td style="text-align: right">$ 2 \times 5 \times 37 $</td>
+                <td></td>
+                <td></td>
+                <td>$ 37 $</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>371</td>
+                <td style="text-align: right">-6</td>
+                <td style="text-align: right">$ 7 \times 53 $</td>
+                <td></td>
+                <td>✅</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>372</td>
+                <td style="text-align: right">-7</td>
+                <td style="text-align: right">$ 2^2 \times 3 \times 31 $</td>
+                <td>✅</td>
+                <td></td>
+                <td>$ 31 $</td>
+                <td>$ 93 $</td>
+              </tr>
+              <tr>
+                <td>373</td>
+                <td style="text-align: right">-8</td>
+                <td style="text-align: right">$ 373 $</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>374</td>
+                <td style="text-align: right">-9</td>
+                <td style="text-align: right">$ 2 \times 11 \times 17 $</td>
+                <td></td>
+                <td></td>
+                <td>$ 22, 34 $</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>375</td>
+                <td style="text-align: right">10</td>
+                <td style="text-align: right">$ 3 \times 5^3 $</td>
+                <td></td>
+                <td></td>
+                <td>$ 25 $</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            Now we only need to use this messy table to build our calendar. To
+            create a calendar that even works at all, without drift, we need to
+            pick a year with a length below our target 🎯 and another year above
+            our target length. Later we’ll find a set of rules that determine
+            how often and when we switch between those two years we picked so
+            the average year length hits close to the target length.
+          </p>
+          <p>
+            Technically, you only need the first column to do that. The closest
+            years would be 365 days and 366 days. It’s actually a sensible
+            choice because this results in a calendar that has the lowest
+            possible year variability, with only one day difference between the
+            year below and the year above the target. This is also what the
+            Gregorian Calendar does. But looking at the table we can note the
+            following things about both lengths:
+          </p>
+          <ul>
+            <li>Not divisible by four; a requirement for equal quarters</li>
+            <li>
+              Not divisible by seven; a requirement for fixed calendars with
+              seven-day weeks
+            </li>
+            <li>
+              They don’t have any factors between 20 and 40, which would allow
+              for equal “month” lengths
+            </li>
+          </ul>
+          <p>
+            But luckily there is a great choice very close to our target; 364.
+            It’s divisible by four and seven. It can support equal months (13
+            months with 28 days each, or 14 months with 26 days each). The month
+            length of 28 days is even divisible by seven, which is perfect
+            because that allows for months with exactly four weeks.
+          </p>
+          <p>
+            But 364 is below the target and we also need a year above that.
+            Looking at the table the next length that’s divisible by seven is
+            371. This is what calendars with
+            <a href="/topics/leap-weeks/">leap weeks</a>
+            are doing. But note that 371 supports neither equal months nor equal
+            quarters, and the year variability is now seven days. So the
+            challenge is now to somehow squeeze in the extra week without
+            completely ruining the benefits that 364 has.
+          </p>
+          <p>
+            Another approach would be to base the year layout solely on 364 days
+            and then add one or two extra days to reach 365 and 366. This is
+            what 13-month calendars (including SAC13) do. However, this approach
+            has the downside that we either won’t have a fixed calendar, or we
+            will have to break the week cycle once or twice a year.
+          </p>
+          <p>
+            I believe it’s important to generally stick to the seven-day week
+            cycle (see
+            <a href="/topics/sac13-week/">why seven-day weeks</a>
+            ). However, it’s also very important to keep the year variability as
+            low as possible (see
+            <a href="/topics/leap-weeks/">leap weeks</a>
+            ), and thus it’s acceptable to allow some exceptions to maintain a
+            highly symmetrical calendar.
+          </p>
+        </main>
+      </div>
+      <div id="button-container">
+        <a
+          href="#"
+          id="top-button"
+          class="no-hover-padding"
+          title="Go to the top of the page">
+          <svg viewBox="0 0 20 20" fill="currentColor">
+            <path
+              d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z" />
+          </svg>
+        </a>
+      </div>
+      <link rel="stylesheet" href="/katex.min.css" />
+      <script defer src="/js/katex.min.js"></script>
+      <span id="copy-success" class="hidden">Copied!</span>
+      <span id="copy-init" class="hidden">Copy code to clipboard</span>
+      <script defer src="/js/copyCodeToClipboard.min.js"></script>
+    </div>
+    <footer>
+      <section>
+        <nav class="socials nav-navs"></nav>
+        <nav class="nav-navs"></nav>
+        <div class="credits">
+          <small>
+            Powered by
+            <a rel="noopener" target="_blank" href="https://www.getzola.org">
+              Zola
+            </a>
+            &amp;
+            <a
+              rel="noopener"
+              target="_blank"
+              href="https://github.com/welpo/tabi">
+              tabi
+            </a>
+          </small>
+        </div>
+      </section>
+    </footer>
+  </body>
+</html>
