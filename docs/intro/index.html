@@ -7,7 +7,8 @@
     <title>SAC13 • Introduction</title>
     <link rel="stylesheet" href="/inter_subset_en.css?h=d8cf4ad058d6c3a4015b" />
     <link rel="stylesheet" href="/main.css?h=4a3dff148c520f191505" />
-    <link rel="stylesheet" href="/sac13-custom.css?h=472ce9dea1078dae851d" />
+    <link rel="stylesheet" href="/sac13-custom.css?h=f8ba18893d3623ebd1ed" />
+    <link rel="stylesheet" href="/css/all.min.css?h=547a97285861331729b9" />
     <meta name="color-scheme" content="light dark" />
     <meta name="description" content="" />
     <meta property="og:description" content="" />
@@ -19,7 +20,8 @@
     <meta property="og:site_name" content="SAC13" />
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self';font-src &#x27;self&#x27; data:;img-src &#x27;self&#x27; https:&#x2F;&#x2F;* data:;media-src &#x27;self&#x27; https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;;style-src &#x27;self&#x27; &#x27;unsafe-inline&#x27;;frame-src player.vimeo.com https:&#x2F;&#x2F;www.youtube-nocookie.com;connect-src 'self';script-src 'self' 'self' 'unsafe-inline' 'wasm-unsafe-eval'" />
+      content="default-src 'self';font-src &#x27;self&#x27; data:;img-src &#x27;self&#x27; https:&#x2F;&#x2F;* data:;media-src &#x27;self&#x27; https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;;style-src &#x27;self&#x27; &#x27;unsafe-inline&#x27;;frame-src player.vimeo.com https:&#x2F;&#x2F;www.youtube-nocookie.com;connect-src 'self';script-src 'self' 'self' 'unsafe-inline' 'wasm-unsafe-eval'"
+    />
     <noscript><link rel="stylesheet" href="/no_js.css" /></noscript>
     <script type="text/javascript" src="/js/initializeTheme.min.js"></script>
     <script defer src="/js/themeSwitcher.min.js"></script>
@@ -33,7 +35,7 @@
         <div class="nav-navs">
           <ul>
             <li>
-              <a class="nav-links no-hover-padding" href="/intro/">Intro</a>
+              <a class="nav-links no-hover-padding" href="/intro/"> Intro </a>
             </li>
             <li>
               <a class="nav-links no-hover-padding" href="/calculator/">
@@ -41,7 +43,7 @@
               </a>
             </li>
             <li>
-              <a class="nav-links no-hover-padding" href="/faq/">FAQ</a>
+              <a class="nav-links no-hover-padding" href="/faq/"> FAQ </a>
             </li>
             <div class="nav-navs" id="menu-icons-group">
               <li class="theme-switcher-wrapper js">
@@ -51,14 +53,16 @@
                   tabindex="0"
                   role="button"
                   aria-label="Toggle dark mode"
-                  aria-pressed="false"></div>
+                  aria-pressed="false"
+                ></div>
                 <div
                   title="Reset mode to default"
                   class="theme-resetter arrow"
                   tabindex="0"
                   role="button"
                   aria-hidden="true"
-                  aria-label="Reset mode to default"></div>
+                  aria-label="Reset mode to default"
+                ></div>
               </li>
             </div>
           </ul>
@@ -76,17 +80,15 @@
             <li>4 equal quarters, or “seasons”, per year</li>
             <li>4 weeks per month</li>
             <li>
-              7 days per week
-              <em>(except “sync days” - more on them later)</em>
+              7 days per week <em>(except “sync days” - more on them later)</em>
             </li>
             <li>No weekday names</li>
             <li>All weeks, months, and years start with the same weekday</li>
             <li>Every year and month has the same layout</li>
             <li>Years start with “March”</li>
             <li>
-              The new 13ᵗʰ month is added at the end, after February, and
-              called
-              <em>Addenduary</em>
+              The new 13<sup class="ord">th</sup> month is added at the end, after February, and
+              called <em>Addenduary</em>
             </li>
             <li>
               New Year is closely aligned with the northward equinox (March
@@ -166,51 +168,39 @@
             Kind of. Because 28 days × 13 months is only 364 days, we are
             missing a day in a common year and two days in a leap year to get to
             365 and 366, respectively. To fix that discrepancy SAC13 uses
-            <em>synchronization days</em>
-            (or sync days for short) to keep the calendar in sync with Earth’s
-            motion around the sun.
+            <em>synchronization days</em> (or sync days for short) to keep the
+            calendar in sync with Earth’s motion around the sun.
           </p>
           <p>
             Sync days are, unlike in other 13-month calendar proposals, not
-            unnamed
-            <a href="/topics/blank-days/">“blank” days</a>
-            but are part of a specific week, month and quarter, and have regular
-            ordinals like all the other dates. If there is a sync day, it’s
-            added to the end of the month as the 29ᵗʰ, and it belongs to the
-            last week of that month. Those eight day weeks are called
-            <em>long weeks</em>
-            or
-            <em>sync weeks</em>
-            and have a three day
-            <a href="/topics/sac13-week/">weekend</a>
-            .
+            unnamed <a href="/topics/blank-days/">“blank” days</a> but are part
+            of a specific week, month and quarter, and have regular ordinals
+            like all the other dates. If there is a sync day, it’s added to the
+            end of the month as the 29<sup class="ord">th</sup>, and it belongs to the last week of
+            that month. Those eight day weeks are called <em>long weeks</em> or
+            <em>sync weeks</em> and have a three day
+            <a href="/topics/sac13-week/">weekend</a>.
           </p>
           <ul>
             <li>
               <p>
-                <strong>Every year ends with a sync day:</strong>
-                <br />
-                <em>29ᵗʰ Addenduary</em>
+                <strong>Every year ends with a sync day:</strong><br />
+                <em>29<sup class="ord">th</sup> Addenduary</em>
               </p>
             </li>
             <li>
               <p>
-                <strong>On leap years, August has a sync day too:</strong>
-                <br />
-                <em>29ᵗʰ August</em>
+                <strong>On leap years, August has a sync day too:</strong><br />
+                <em>29<sup class="ord">th</sup> August</em>
               </p>
             </li>
           </ul>
           <p>
-            It’s fair game to call them
-            <em>Year Day</em>
-            and
-            <em>Leap Day</em>
-            if you want, but keep in mind that it’s similar to calling 14ᵗʰ
-            February
-            <em>Valentine’s Day</em>
-            . Other people probably know which day you mean, but those are not
-            formally recognized names for the day.
+            It’s fair game to call them <em>Year Day</em> and
+            <em>Leap Day</em> if you want, but keep in mind that it’s similar to
+            calling 14<sup class="ord">th</sup> February <em>Valentine’s Day</em>. Other people
+            probably know which day you mean, but those are not formally
+            recognized names for the day.
           </p>
           <h2 id="year-layout">Year layout</h2>
           <p>
@@ -223,7 +213,8 @@
             src="&#x2F;img&#x2F;year_layout.svg"
             loading="lazy"
             alt="year layout for sac13 calendar"
-            width="450" />
+            width="450"
+          />
           <h2 id="leap-years">Leap years</h2>
           <p>
             Every four or five years SAC13 has a leap year to ensure that the
@@ -242,8 +233,7 @@
           <p>
             Why those exact magic numbers, technical details, and why I think
             it’s okay that you can’t do that in your head
-            <a href="/tech/leap-year-rule/">here</a>
-            .
+            <a href="/tech/leap-year-rule/">here</a>.
           </p>
           <p>
             In most programming languages the implementation is a branchless
@@ -251,7 +241,8 @@
           </p>
           <pre
             data-lang="rust"
-            class="language-rust z-code"><code class="language-rust" data-lang="rust"><span class="z-source z-rust"><span class="z-meta z-function z-rust"><span class="z-meta z-function z-rust"><span class="z-storage z-type z-function z-rust">fn</span> </span><span class="z-entity z-name z-function z-rust">is_leap_year</span></span> <span class="z-meta z-function z-rust"><span class="z-meta z-function z-parameters z-rust"><span class="z-punctuation z-section z-parameters z-begin z-rust">(</span><span class="z-variable z-parameter z-rust">year</span><span class="z-punctuation z-separator z-rust">:</span> <span class="z-storage z-type z-rust">u32</span></span><span class="z-meta z-function z-rust"><span class="z-meta z-function z-parameters z-rust"><span class="z-punctuation z-section z-parameters z-end z-rust">)</span></span></span></span><span class="z-meta z-function z-rust"> <span class="z-meta z-function z-return-type z-rust"><span class="z-punctuation z-separator z-rust">-&gt;</span> <span class="z-storage z-type z-rust">bool</span>
+            class="language-rust z-code"
+          ><code class="language-rust" data-lang="rust"><span class="z-source z-rust"><span class="z-meta z-function z-rust"><span class="z-meta z-function z-rust"><span class="z-storage z-type z-function z-rust">fn</span> </span><span class="z-entity z-name z-function z-rust">is_leap_year</span></span> <span class="z-meta z-function z-rust"><span class="z-meta z-function z-parameters z-rust"><span class="z-punctuation z-section z-parameters z-begin z-rust">(</span><span class="z-variable z-parameter z-rust">year</span><span class="z-punctuation z-separator z-rust">:</span> <span class="z-storage z-type z-rust">u32</span></span><span class="z-meta z-function z-rust"><span class="z-meta z-function z-parameters z-rust"><span class="z-punctuation z-section z-parameters z-end z-rust">)</span></span></span></span><span class="z-meta z-function z-rust"> <span class="z-meta z-function z-return-type z-rust"><span class="z-punctuation z-separator z-rust">-&gt;</span> <span class="z-storage z-type z-rust">bool</span>
 </span></span></span><span class="z-source z-rust"><span class="z-meta z-function z-rust"><span class="z-meta z-function z-return-type z-rust"></span></span><span class="z-meta z-function z-rust"><span class="z-meta z-block z-rust"><span class="z-punctuation z-section z-block z-begin z-rust">{</span>
 </span></span></span><span class="z-source z-rust"><span class="z-meta z-function z-rust"><span class="z-meta z-block z-rust">    <span class="z-meta z-group z-rust"><span class="z-punctuation z-section z-group z-begin z-rust">(</span>year <span class="z-keyword z-operator z-arithmetic z-rust">+</span> <span class="z-constant z-numeric z-integer z-decimal z-rust">199</span></span><span class="z-meta z-group z-rust"><span class="z-punctuation z-section z-group z-end z-rust">)</span></span> <span class="z-keyword z-operator z-arithmetic z-rust">%</span> <span class="z-constant z-numeric z-integer z-decimal z-rust">293</span> <span class="z-keyword z-operator z-arithmetic z-rust">%</span> <span class="z-constant z-numeric z-integer z-decimal z-rust">33</span> <span class="z-keyword z-operator z-arithmetic z-rust">%</span> <span class="z-constant z-numeric z-integer z-decimal z-rust">4</span> <span class="z-keyword z-operator z-comparison z-rust">==</span> <span class="z-constant z-numeric z-integer z-decimal z-rust">1</span>
 </span></span></span><span class="z-source z-rust"><span class="z-meta z-function z-rust"><span class="z-meta z-block z-rust"></span><span class="z-meta z-block z-rust"><span class="z-punctuation z-section z-block z-end z-rust">}</span></span></span>
@@ -259,15 +250,15 @@
           <h2 id="no-weekday-names">No weekday names</h2>
           <p>
             SAC13 doesn’t have official names for the weekdays but formally
-            recognizes only weekday ordinals like “1ˢᵗ weekday”, “2ⁿᵈ
+            recognizes only weekday ordinals like “1<sup class="ord">st</sup> weekday”, “2<sup class="ord">nd</sup>
             weekday”, and so on. Because all months have a fixed layout, the day
             of the week is completely determined by the day of the month.
           </p>
           <p>
             To determine the day of the week in SAC13 for any day, find the
             previous multiple of seven and take the difference. For example to
-            find the day of the week for the 24ᵗʰ, find the last multiple of
-            seven (21ˢᵗ), take the difference (3), so it’s the 3ʳᵈ day of
+            find the day of the week for the 24<sup class="ord">th</sup>, find the last multiple of
+            seven (21<sup class="ord">st</sup>), take the difference (3), so it’s the 3<sup class="ord">rd</sup> day of
             the week, “Weekday Three” or “D3”. Note however, this does not tell
             you the Gregorian Calendar day of the week.
           </p>
@@ -280,8 +271,7 @@
           <p>
             Do you want more details on SAC13 weekdays and why they don’t need
             names? Take a look here:
-            <a href="/topics/sac13-week/">“SAC13 week”</a>
-            .
+            <a href="/topics/sac13-week/">“SAC13 week”</a>.
           </p>
           <h2 id="reference-dates">Reference dates</h2>
           <p>
@@ -307,20 +297,15 @@
             chose the Gregorian year 2000 as an example and original starting
             point, because it’s fairly recent so people can relate to it, and
             it’s a nice round number. If you are interested in different dates,
-            check out the
-            <a href="/calculator/">calculator</a>
-            .
+            check out the <a href="/calculator/">calculator</a>.
           </p>
           <h1 id="benefits">Benefits</h1>
           <p>
             Here is a quick summary of some benefits of SAC13 compared to other
             proposals and the Gregorian Calendar. This is just a quick overview.
-            Check out the
-            <a href="/faq/">FAQs</a>
-            and comparisons to
-            <a href="/sac13-vs/others/">other proposals</a>
-            if you want details, reasons, and explanations behind the SAC13
-            design decisions.
+            Check out the <a href="/faq/">FAQs</a> and comparisons to
+            <a href="/sac13-vs/others/">other proposals</a> if you want details,
+            reasons, and explanations behind the SAC13 design decisions.
           </p>
           <ul>
             <li>
@@ -342,8 +327,8 @@
             </li>
             <li>
               It doesn’t have
-              <a href="/topics/blank-days/">“blank” days</a>
-              “outside” the calendar, like other 13 month proposals.
+              <a href="/topics/blank-days/">“blank” days</a> “outside” the
+              calendar, like other 13 month proposals.
             </li>
             <li>
               The calendar layout, documentation and it’s reference
@@ -371,8 +356,7 @@
               SAC13 will (once or twice a year) have a week with an additional
               day, to keep the calendar in sync with the solar system, and thus
               fall out of sync with the “Gregorian Week”. This is also called
-              <a href="/topics/sac13-week/">breaking the week cycle</a>
-              .
+              <a href="/topics/sac13-week/">breaking the week cycle</a>.
             </li>
             <li>
               Years of this calendar are not congruent with the Gregorian
@@ -380,13 +364,12 @@
               Gregorian New Year.
             </li>
             <li>
-              The
-              <a href="/tech/leap-year-rule/">leap year rule</a>
-              is more complicated than in the Gregorian Calendar.
+              The <a href="/tech/leap-year-rule/">leap year rule</a> is more
+              complicated than in the Gregorian Calendar.
             </li>
             <li>
-              <a href="/topics/sac13-quarter/">Quarters</a>
-              are not aligned with whole months, but only weeks.
+              <a href="/topics/sac13-quarter/">Quarters</a> are not aligned with
+              whole months, but only weeks.
             </li>
           </ul>
           <p>
@@ -398,15 +381,14 @@
             <li>
               Switching to a new calendar (especially on a large scale, like
               globally) is
-              <a href="/topics/cost-and-effort/">
-                unimaginably expensive and a huge effort
-              </a>
-              .
+              <a href="/topics/cost-and-effort/"
+                >unimaginably expensive and a huge effort</a
+              >.
             </li>
             <li>
               All
-              <a href="/topics/different-dates/">dates will be different</a>
-              . Anniversaries, wedding dates and birthdays, Halloween 🎃, etc.
+              <a href="/topics/different-dates/">dates will be different</a>.
+              Anniversaries, wedding dates and birthdays, Halloween 🎃, etc.
             </li>
           </ul>
           <h1 id="deep-dive">Deep dive?</h1>
@@ -414,11 +396,8 @@
             Ready to go down the rabbit hole? These were just the basics about
             SAC13. If you’d like to know more about the reasons behind the
             decisions, technical explanations and what happens to all the
-            birthdays you can check out our
-            <a href="/faq/">FAQs</a>
-            or comparisons to
-            <a href="/sac13-vs/others/">other proposals</a>
-            .
+            birthdays you can check out our <a href="/faq/">FAQs</a> or
+            comparisons to <a href="/sac13-vs/others/">other proposals</a>.
           </p>
         </main>
       </div>
@@ -430,10 +409,12 @@
             for="toc-toggle"
             id="toc-button"
             class="button"
-            title="Toggle Table of Contents">
+            title="Toggle Table of Contents"
+          >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
               <path
-                d="M414.82-193.094q-18.044 0-30.497-12.32-12.453-12.319-12.453-30.036t12.453-30.086q12.453-12.37 30.497-12.37h392.767q17.237 0 29.927 12.487 12.69 12.486 12.69 30.203 0 17.716-12.69 29.919t-29.927 12.203H414.82Zm0-244.833q-18.044 0-30.497-12.487Q371.87-462.9 371.87-480.45t12.453-29.92q12.453-12.369 30.497-12.369h392.767q17.237 0 29.927 12.511 12.69 12.512 12.69 29.845 0 17.716-12.69 30.086-12.69 12.37-29.927 12.37H414.82Zm0-245.167q-18.044 0-30.497-12.32t-12.453-30.037q0-17.716 12.453-30.086 12.453-12.369 30.497-12.369h392.767q17.237 0 29.927 12.486 12.69 12.487 12.69 30.203 0 17.717-12.69 29.92-12.69 12.203-29.927 12.203H414.82ZM189.379-156.681q-32.652 0-55.878-22.829t-23.226-55.731q0-32.549 23.15-55.647 23.151-23.097 55.95-23.097 32.799 0 55.313 23.484 22.515 23.484 22.515 56.246 0 32.212-22.861 54.893-22.861 22.681-54.963 22.681Zm0-245.167q-32.652 0-55.878-23.134-23.226-23.135-23.226-55.623 0-32.487 23.467-55.517t56.12-23.03q32.102 0 54.721 23.288 22.62 23.288 22.62 55.775 0 32.488-22.861 55.364-22.861 22.877-54.963 22.877Zm-.82-244.833q-32.224 0-55.254-23.288-23.03-23.289-23.03-55.623 0-32.333 23.271-55.364 23.272-23.03 55.495-23.03 32.224 0 55.193 23.288 22.969 23.289 22.969 55.622 0 32.334-23.21 55.364-23.21 23.031-55.434 23.031Z" />
+                d="M414.82-193.094q-18.044 0-30.497-12.32-12.453-12.319-12.453-30.036t12.453-30.086q12.453-12.37 30.497-12.37h392.767q17.237 0 29.927 12.487 12.69 12.486 12.69 30.203 0 17.716-12.69 29.919t-29.927 12.203H414.82Zm0-244.833q-18.044 0-30.497-12.487Q371.87-462.9 371.87-480.45t12.453-29.92q12.453-12.369 30.497-12.369h392.767q17.237 0 29.927 12.511 12.69 12.512 12.69 29.845 0 17.716-12.69 30.086-12.69 12.37-29.927 12.37H414.82Zm0-245.167q-18.044 0-30.497-12.32t-12.453-30.037q0-17.716 12.453-30.086 12.453-12.369 30.497-12.369h392.767q17.237 0 29.927 12.486 12.69 12.487 12.69 30.203 0 17.717-12.69 29.92-12.69 12.203-29.927 12.203H414.82ZM189.379-156.681q-32.652 0-55.878-22.829t-23.226-55.731q0-32.549 23.15-55.647 23.151-23.097 55.95-23.097 32.799 0 55.313 23.484 22.515 23.484 22.515 56.246 0 32.212-22.861 54.893-22.861 22.681-54.963 22.681Zm0-245.167q-32.652 0-55.878-23.134-23.226-23.135-23.226-55.623 0-32.487 23.467-55.517t56.12-23.03q32.102 0 54.721 23.288 22.62 23.288 22.62 55.775 0 32.488-22.861 55.364-22.861 22.877-54.963 22.877Zm-.82-244.833q-32.224 0-55.254-23.288-23.03-23.289-23.03-55.623 0-32.333 23.271-55.364 23.272-23.03 55.495-23.03 32.224 0 55.193 23.288 22.969 23.289 22.969 55.622 0 32.334-23.21 55.364-23.21 23.031-55.434 23.031Z"
+              />
             </svg>
           </label>
           <div class="toc-content">
@@ -444,9 +425,9 @@
                   <a href="/intro/#month-layout">Month layout</a>
                   <ul>
                     <li>
-                      <a href="/intro/#but-there-is-a-catch-right">
-                        But there is a catch, right?
-                      </a>
+                      <a href="/intro/#but-there-is-a-catch-right"
+                        >But there is a catch, right?</a
+                      >
                     </li>
                   </ul>
                 </li>
@@ -465,17 +446,19 @@
           href="#"
           id="top-button"
           class="no-hover-padding"
-          title="Go to the top of the page">
+          title="Go to the top of the page"
+        >
           <svg viewBox="0 0 20 20" fill="currentColor">
             <path
-              d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z" />
+              d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z"
+            />
           </svg>
         </a>
       </div>
       <link rel="stylesheet" href="/katex.min.css" />
       <script defer src="/js/katex.min.js"></script>
-      <span id="copy-success" class="hidden">Copied!</span>
-      <span id="copy-init" class="hidden">Copy code to clipboard</span>
+      <span id="copy-success" class="hidden"> Copied! </span>
+      <span id="copy-init" class="hidden"> Copy code to clipboard </span>
       <script defer src="/js/copyCodeToClipboard.min.js"></script>
     </div>
     <footer>
@@ -485,16 +468,16 @@
         <div class="credits">
           <small>
             Powered by
-            <a rel="noopener" target="_blank" href="https://www.getzola.org">
-              Zola
-            </a>
+            <a rel="noopener" target="_blank" href="https://www.getzola.org"
+              >Zola</a
+            >
             &amp;
             <a
               rel="noopener"
               target="_blank"
-              href="https://github.com/welpo/tabi">
-              tabi
-            </a>
+              href="https://github.com/welpo/tabi"
+              >tabi</a
+            >
           </small>
         </div>
       </section>

@@ -7,7 +7,8 @@
     <title>SAC13 • Calculator</title>
     <link rel="stylesheet" href="/inter_subset_en.css?h=d8cf4ad058d6c3a4015b" />
     <link rel="stylesheet" href="/main.css?h=4a3dff148c520f191505" />
-    <link rel="stylesheet" href="/sac13-custom.css?h=472ce9dea1078dae851d" />
+    <link rel="stylesheet" href="/sac13-custom.css?h=f8ba18893d3623ebd1ed" />
+    <link rel="stylesheet" href="/css/all.min.css?h=547a97285861331729b9" />
     <meta name="color-scheme" content="light dark" />
     <meta name="description" content="" />
     <meta property="og:description" content="" />
@@ -19,7 +20,8 @@
     <meta property="og:site_name" content="SAC13" />
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self';font-src &#x27;self&#x27; data:;img-src &#x27;self&#x27; https:&#x2F;&#x2F;* data:;media-src &#x27;self&#x27; https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;;style-src &#x27;self&#x27; &#x27;unsafe-inline&#x27;;frame-src player.vimeo.com https:&#x2F;&#x2F;www.youtube-nocookie.com;connect-src 'self';script-src 'self' 'self' 'unsafe-inline' 'wasm-unsafe-eval'" />
+      content="default-src 'self';font-src &#x27;self&#x27; data:;img-src &#x27;self&#x27; https:&#x2F;&#x2F;* data:;media-src &#x27;self&#x27; https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;;style-src &#x27;self&#x27; &#x27;unsafe-inline&#x27;;frame-src player.vimeo.com https:&#x2F;&#x2F;www.youtube-nocookie.com;connect-src 'self';script-src 'self' 'self' 'unsafe-inline' 'wasm-unsafe-eval'"
+    />
     <noscript><link rel="stylesheet" href="/no_js.css" /></noscript>
     <script type="text/javascript" src="/js/initializeTheme.min.js"></script>
     <script defer src="/js/themeSwitcher.min.js"></script>
@@ -33,7 +35,7 @@
         <div class="nav-navs">
           <ul>
             <li>
-              <a class="nav-links no-hover-padding" href="/intro/">Intro</a>
+              <a class="nav-links no-hover-padding" href="/intro/"> Intro </a>
             </li>
             <li>
               <a class="nav-links no-hover-padding" href="/calculator/">
@@ -41,7 +43,7 @@
               </a>
             </li>
             <li>
-              <a class="nav-links no-hover-padding" href="/faq/">FAQ</a>
+              <a class="nav-links no-hover-padding" href="/faq/"> FAQ </a>
             </li>
             <div class="nav-navs" id="menu-icons-group">
               <li class="theme-switcher-wrapper js">
@@ -51,14 +53,16 @@
                   tabindex="0"
                   role="button"
                   aria-label="Toggle dark mode"
-                  aria-pressed="false"></div>
+                  aria-pressed="false"
+                ></div>
                 <div
                   title="Reset mode to default"
                   class="theme-resetter arrow"
                   tabindex="0"
                   role="button"
                   aria-hidden="true"
-                  aria-label="Reset mode to default"></div>
+                  aria-label="Reset mode to default"
+                ></div>
               </li>
             </div>
           </ul>
@@ -150,11 +154,19 @@
           </style>
           <div id="control-container">
             <div>
-              <span class="arrow left" id="arrowleft" title="yesterday">⮜</span>
+              <span class="arrow left" id="arrowleft" title="yesterday"
+                ><i
+                  class="fa-solid fa-circle-left"
+                  style="vertical-align: middle"
+                ></i
+              ></span>
               <input id="date-input" type="text" />
-              <span class="arrow right" id="arrowright" title="tomorrow">
-                ⮞
-              </span>
+              <span class="arrow right" id="arrowright" title="tomorrow"
+                ><i
+                  class="fa-solid fa-circle-right"
+                  style="vertical-align: middle"
+                ></i
+              ></span>
               <div id="date_sub">&nbsp;</div>
               <div style="display: block; height: 0.75em"></div>
               <button id="today-button">Today</button>
@@ -164,13 +176,13 @@
           <div id="cal-container">
             <div id="block-cal-sac13">
               <span style="display: block; height: 1em">
-                <span class="katex-display" id="ktexjs-sac13"></span>
+                <span class="katex-display" id="ktexjs-sac13"> </span>
               </span>
               <div id="cal-sac13"></div>
             </div>
             <div id="block-cal-greg">
               <span style="display: block; height: 1em">
-                <span class="katex-display" id="ktexjs-greg"></span>
+                <span class="katex-display" id="ktexjs-greg"> </span>
               </span>
               <div id="cal-greg"></div>
             </div>
@@ -184,17 +196,19 @@
           href="#"
           id="top-button"
           class="no-hover-padding"
-          title="Go to the top of the page">
+          title="Go to the top of the page"
+        >
           <svg viewBox="0 0 20 20" fill="currentColor">
             <path
-              d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z" />
+              d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z"
+            />
           </svg>
         </a>
       </div>
       <link rel="stylesheet" href="/katex.min.css" />
       <script defer src="/js/katex.min.js"></script>
-      <span id="copy-success" class="hidden">Copied!</span>
-      <span id="copy-init" class="hidden">Copy code to clipboard</span>
+      <span id="copy-success" class="hidden"> Copied! </span>
+      <span id="copy-init" class="hidden"> Copy code to clipboard </span>
       <script defer src="/js/copyCodeToClipboard.min.js"></script>
     </div>
     <footer>
@@ -204,16 +218,16 @@
         <div class="credits">
           <small>
             Powered by
-            <a rel="noopener" target="_blank" href="https://www.getzola.org">
-              Zola
-            </a>
+            <a rel="noopener" target="_blank" href="https://www.getzola.org"
+              >Zola</a
+            >
             &amp;
             <a
               rel="noopener"
               target="_blank"
-              href="https://github.com/welpo/tabi">
-              tabi
-            </a>
+              href="https://github.com/welpo/tabi"
+              >tabi</a
+            >
           </small>
         </div>
       </section>

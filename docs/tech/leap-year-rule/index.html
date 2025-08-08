@@ -7,7 +7,8 @@
     <title>SAC13 • SAC13 leap year rule</title>
     <link rel="stylesheet" href="/inter_subset_en.css?h=d8cf4ad058d6c3a4015b" />
     <link rel="stylesheet" href="/main.css?h=4a3dff148c520f191505" />
-    <link rel="stylesheet" href="/sac13-custom.css?h=472ce9dea1078dae851d" />
+    <link rel="stylesheet" href="/sac13-custom.css?h=f8ba18893d3623ebd1ed" />
+    <link rel="stylesheet" href="/css/all.min.css?h=547a97285861331729b9" />
     <meta name="color-scheme" content="light dark" />
     <meta name="description" content="" />
     <meta property="og:description" content="" />
@@ -19,7 +20,8 @@
     <meta property="og:site_name" content="SAC13" />
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self';font-src &#x27;self&#x27; data:;img-src &#x27;self&#x27; https:&#x2F;&#x2F;* data:;media-src &#x27;self&#x27; https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;;style-src &#x27;self&#x27; &#x27;unsafe-inline&#x27;;frame-src player.vimeo.com https:&#x2F;&#x2F;www.youtube-nocookie.com;connect-src 'self';script-src 'self' 'self' 'unsafe-inline' 'wasm-unsafe-eval'" />
+      content="default-src 'self';font-src &#x27;self&#x27; data:;img-src &#x27;self&#x27; https:&#x2F;&#x2F;* data:;media-src &#x27;self&#x27; https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;;style-src &#x27;self&#x27; &#x27;unsafe-inline&#x27;;frame-src player.vimeo.com https:&#x2F;&#x2F;www.youtube-nocookie.com;connect-src 'self';script-src 'self' 'self' 'unsafe-inline' 'wasm-unsafe-eval'"
+    />
     <noscript><link rel="stylesheet" href="/no_js.css" /></noscript>
     <script type="text/javascript" src="/js/initializeTheme.min.js"></script>
     <script defer src="/js/themeSwitcher.min.js"></script>
@@ -33,7 +35,7 @@
         <div class="nav-navs">
           <ul>
             <li>
-              <a class="nav-links no-hover-padding" href="/intro/">Intro</a>
+              <a class="nav-links no-hover-padding" href="/intro/"> Intro </a>
             </li>
             <li>
               <a class="nav-links no-hover-padding" href="/calculator/">
@@ -41,7 +43,7 @@
               </a>
             </li>
             <li>
-              <a class="nav-links no-hover-padding" href="/faq/">FAQ</a>
+              <a class="nav-links no-hover-padding" href="/faq/"> FAQ </a>
             </li>
             <div class="nav-navs" id="menu-icons-group">
               <li class="theme-switcher-wrapper js">
@@ -51,14 +53,16 @@
                   tabindex="0"
                   role="button"
                   aria-label="Toggle dark mode"
-                  aria-pressed="false"></div>
+                  aria-pressed="false"
+                ></div>
                 <div
                   title="Reset mode to default"
                   class="theme-resetter arrow"
                   tabindex="0"
                   role="button"
                   aria-hidden="true"
-                  aria-label="Reset mode to default"></div>
+                  aria-label="Reset mode to default"
+                ></div>
               </li>
             </div>
           </ul>
@@ -88,7 +92,7 @@
             there are leap years and (solar) calendars typically have leap year
             rules to match the length of the year. The main goal of SAC13’s leap
             year rule is to keep the March equinox as close as possible to the
-            start of the year (1ˢᵗ March 00:00 UTC), and to do that, we need
+            start of the year (1<sup class="ord">st</sup> March 00:00 UTC), and to do that, we need
             to first find out how long a year really is.
           </p>
           <p>
@@ -98,29 +102,24 @@
             <a
               rel="noopener"
               target="_blank"
-              href="https://en.wikipedia.org/wiki/Sidereal_year">
-              Sidereal year
-            </a>
+              href="https://en.wikipedia.org/wiki/Sidereal_year"
+              >Sidereal year</a
+            >
             and the
             <a
               rel="noopener"
               target="_blank"
-              href="https://calendars.fandom.com/wiki/Tropical_year">
-              Tropical year
-            </a>
-            . Solar Calendars try to match the Tropical year, but even here
+              href="https://calendars.fandom.com/wiki/Tropical_year"
+              >Tropical year</a
+            >. Solar Calendars try to match the Tropical year, but even here
             there are important differences, because the
-            <em>mean tropical year</em>
-            and the
-            <em>vernal equinox year</em>
-            are slightly different and depending on the calendar’s goals it’s
+            <em>mean tropical year</em> and the <em>vernal equinox year</em> are
+            slightly different and depending on the calendar’s goals it’s
             important what to choose as a target. Many calendars aim to anchor
             the March equinox to a specific date or near the start of the year
             but most other calendars (even new modern proposals) get it wrong
-            and try to track the
-            <em>mean tropical year</em>
-            , which causes the March equinox to slowly drift away from the
-            intended position.
+            and try to track the <em>mean tropical year</em>, which causes the
+            March equinox to slowly drift away from the intended position.
           </p>
           <p>
             The length of the March (vernal/northward) equinox year, which SAC13
@@ -131,9 +130,9 @@
             <a
               rel="noopener"
               target="_blank"
-              href="https://en.wikipedia.org/wiki/Continued_fraction">
-              continued fractions
-            </a>
+              href="https://en.wikipedia.org/wiki/Continued_fraction"
+              >continued fractions</a
+            >
             and similar tools to find good rational approximations with small
             denominators and then construct cycles with that.
           </p>
@@ -151,9 +150,9 @@
             <a
               rel="noopener"
               target="_blank"
-              href="https://stellafane.org/misc/equinox.html">
-              this model
-            </a>
+              href="https://stellafane.org/misc/equinox.html"
+              >this model</a
+            >
             (actually a Rust port of it) and picked the one that had the most
             matches in some thousand years. The match evaluation function was
             also weighted, so that matches in the more distant future are less
@@ -192,7 +191,7 @@
             Today, I believe the only people who really think about leap years
             are people with a special connection to leap days, for example,
             because of a birthday, wedding day, etc., or because someone
-            coincidentally saw the 29ᵗʰ February on their mobile phone
+            coincidentally saw the 29<sup class="ord">th</sup> February on their mobile phone
             calendar.
           </p>
           <h2 id="march-equinox-rule-based-vs-measured">
@@ -204,9 +203,9 @@
             <a
               rel="noopener"
               target="_blank"
-              href="https://en.wikipedia.org/wiki/Solar_Hijri_calendar">
-              Solar Hijri calendar
-            </a>
+              href="https://en.wikipedia.org/wiki/Solar_Hijri_calendar"
+              >Solar Hijri calendar</a
+            >
             for example is even used as the official calendar in Iran and also
             starts with the March equinox. It’s often considered to be the most
             accurate calendar and in a way that’s actually true, because they
@@ -254,10 +253,10 @@
             Difference between Sync Day, Leap Day and Year Day
           </h2>
           <p>
-            Every 29ᵗʰ is a sync day, so Leap Day is a sync day, and Year Day
+            Every 29<sup class="ord">th</sup> is a sync day, so Leap Day is a sync day, and Year Day
             is also a sync day. All years, common years with 365 days and leap
-            years with 366 days have a Year Day on 29ᵗʰ Addenduary. Leap years
-            have an additional sync day, namely the Leap Day on 29ᵗʰ August.
+            years with 366 days have a Year Day on 29<sup class="ord">th</sup> Addenduary. Leap years
+            have an additional sync day, namely the Leap Day on 29<sup class="ord">th</sup> August.
           </p>
         </main>
       </div>
@@ -269,10 +268,12 @@
             for="toc-toggle"
             id="toc-button"
             class="button"
-            title="Toggle Table of Contents">
+            title="Toggle Table of Contents"
+          >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
               <path
-                d="M414.82-193.094q-18.044 0-30.497-12.32-12.453-12.319-12.453-30.036t12.453-30.086q12.453-12.37 30.497-12.37h392.767q17.237 0 29.927 12.487 12.69 12.486 12.69 30.203 0 17.716-12.69 29.919t-29.927 12.203H414.82Zm0-244.833q-18.044 0-30.497-12.487Q371.87-462.9 371.87-480.45t12.453-29.92q12.453-12.369 30.497-12.369h392.767q17.237 0 29.927 12.511 12.69 12.512 12.69 29.845 0 17.716-12.69 30.086-12.69 12.37-29.927 12.37H414.82Zm0-245.167q-18.044 0-30.497-12.32t-12.453-30.037q0-17.716 12.453-30.086 12.453-12.369 30.497-12.369h392.767q17.237 0 29.927 12.486 12.69 12.487 12.69 30.203 0 17.717-12.69 29.92-12.69 12.203-29.927 12.203H414.82ZM189.379-156.681q-32.652 0-55.878-22.829t-23.226-55.731q0-32.549 23.15-55.647 23.151-23.097 55.95-23.097 32.799 0 55.313 23.484 22.515 23.484 22.515 56.246 0 32.212-22.861 54.893-22.861 22.681-54.963 22.681Zm0-245.167q-32.652 0-55.878-23.134-23.226-23.135-23.226-55.623 0-32.487 23.467-55.517t56.12-23.03q32.102 0 54.721 23.288 22.62 23.288 22.62 55.775 0 32.488-22.861 55.364-22.861 22.877-54.963 22.877Zm-.82-244.833q-32.224 0-55.254-23.288-23.03-23.289-23.03-55.623 0-32.333 23.271-55.364 23.272-23.03 55.495-23.03 32.224 0 55.193 23.288 22.969 23.289 22.969 55.622 0 32.334-23.21 55.364-23.21 23.031-55.434 23.031Z" />
+                d="M414.82-193.094q-18.044 0-30.497-12.32-12.453-12.319-12.453-30.036t12.453-30.086q12.453-12.37 30.497-12.37h392.767q17.237 0 29.927 12.487 12.69 12.486 12.69 30.203 0 17.716-12.69 29.919t-29.927 12.203H414.82Zm0-244.833q-18.044 0-30.497-12.487Q371.87-462.9 371.87-480.45t12.453-29.92q12.453-12.369 30.497-12.369h392.767q17.237 0 29.927 12.511 12.69 12.512 12.69 29.845 0 17.716-12.69 30.086-12.69 12.37-29.927 12.37H414.82Zm0-245.167q-18.044 0-30.497-12.32t-12.453-30.037q0-17.716 12.453-30.086 12.453-12.369 30.497-12.369h392.767q17.237 0 29.927 12.486 12.69 12.487 12.69 30.203 0 17.717-12.69 29.92-12.69 12.203-29.927 12.203H414.82ZM189.379-156.681q-32.652 0-55.878-22.829t-23.226-55.731q0-32.549 23.15-55.647 23.151-23.097 55.95-23.097 32.799 0 55.313 23.484 22.515 23.484 22.515 56.246 0 32.212-22.861 54.893-22.861 22.681-54.963 22.681Zm0-245.167q-32.652 0-55.878-23.134-23.226-23.135-23.226-55.623 0-32.487 23.467-55.517t56.12-23.03q32.102 0 54.721 23.288 22.62 23.288 22.62 55.775 0 32.488-22.861 55.364-22.861 22.877-54.963 22.877Zm-.82-244.833q-32.224 0-55.254-23.288-23.03-23.289-23.03-55.623 0-32.333 23.271-55.364 23.272-23.03 55.495-23.03 32.224 0 55.193 23.288 22.969 23.289 22.969 55.622 0 32.334-23.21 55.364-23.21 23.031-55.434 23.031Z"
+              />
             </svg>
           </label>
           <div class="toc-content">
@@ -281,27 +282,27 @@
                 <li><a href="/tech/leap-year-rule/#example">Example</a></li>
                 <li>
                   <a
-                    href="/tech/leap-year-rule/#why-is-the-leap-year-rule-the-way-it-is">
-                    Why is the leap year rule the way it is?
-                  </a>
+                    href="/tech/leap-year-rule/#why-is-the-leap-year-rule-the-way-it-is"
+                    >Why is the leap year rule the way it is?</a
+                  >
                 </li>
                 <li>
                   <a
-                    href="/tech/leap-year-rule/#why-not-use-a-simpler-leap-year-rule">
-                    Why not use a simpler leap year rule?
-                  </a>
+                    href="/tech/leap-year-rule/#why-not-use-a-simpler-leap-year-rule"
+                    >Why not use a simpler leap year rule?</a
+                  >
                 </li>
                 <li>
                   <a
-                    href="/tech/leap-year-rule/#march-equinox-rule-based-vs-measured">
-                    March equinox rule-based vs measured
-                  </a>
+                    href="/tech/leap-year-rule/#march-equinox-rule-based-vs-measured"
+                    >March equinox rule-based vs measured</a
+                  >
                 </li>
                 <li>
                   <a
-                    href="/tech/leap-year-rule/#difference-between-sync-day-leap-day-and-year-day">
-                    Difference between Sync Day, Leap Day and Year Day
-                  </a>
+                    href="/tech/leap-year-rule/#difference-between-sync-day-leap-day-and-year-day"
+                    >Difference between Sync Day, Leap Day and Year Day</a
+                  >
                 </li>
               </ul>
             </div>
@@ -311,17 +312,19 @@
           href="#"
           id="top-button"
           class="no-hover-padding"
-          title="Go to the top of the page">
+          title="Go to the top of the page"
+        >
           <svg viewBox="0 0 20 20" fill="currentColor">
             <path
-              d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z" />
+              d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z"
+            />
           </svg>
         </a>
       </div>
       <link rel="stylesheet" href="/katex.min.css" />
       <script defer src="/js/katex.min.js"></script>
-      <span id="copy-success" class="hidden">Copied!</span>
-      <span id="copy-init" class="hidden">Copy code to clipboard</span>
+      <span id="copy-success" class="hidden"> Copied! </span>
+      <span id="copy-init" class="hidden"> Copy code to clipboard </span>
       <script defer src="/js/copyCodeToClipboard.min.js"></script>
     </div>
     <footer>
@@ -331,16 +334,16 @@
         <div class="credits">
           <small>
             Powered by
-            <a rel="noopener" target="_blank" href="https://www.getzola.org">
-              Zola
-            </a>
+            <a rel="noopener" target="_blank" href="https://www.getzola.org"
+              >Zola</a
+            >
             &amp;
             <a
               rel="noopener"
               target="_blank"
-              href="https://github.com/welpo/tabi">
-              tabi
-            </a>
+              href="https://github.com/welpo/tabi"
+              >tabi</a
+            >
           </small>
         </div>
       </section>
