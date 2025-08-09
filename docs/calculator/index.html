@@ -4,56 +4,44 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="base" content="/" />
-
-    <title>SAC13 • 404</title>
-
+    <title>SAC13 • Calculator</title>
     <link rel="stylesheet" href="/inter_subset_en.css?h=d8cf4ad058d6c3a4015b" />
-
     <link rel="stylesheet" href="/main.css?h=4a3dff148c520f191505" />
     <link rel="stylesheet" href="/sac13-custom.css?h=f8ba18893d3623ebd1ed" />
     <link rel="stylesheet" href="/css/all.min.css?h=547a97285861331729b9" />
-
     <meta name="color-scheme" content="light dark" />
     <meta name="description" content="" />
     <meta property="og:description" content="" />
-
     <meta name="robots" content="index, nofollow" />
-
     <meta property="og:title" content="" />
     <meta property="og:type" content="article" />
-
     <meta property="og:locale" content="en_GB" />
-
     <meta property="og:url" content="&#x2F;calculator&#x2F;" />
     <meta property="og:site_name" content="SAC13" />
     <meta
       http-equiv="Content-Security-Policy"
       content="default-src 'self';font-src &#x27;self&#x27; data:;img-src &#x27;self&#x27; https:&#x2F;&#x2F;* data:;media-src &#x27;self&#x27; https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;;style-src &#x27;self&#x27; &#x27;unsafe-inline&#x27;;frame-src player.vimeo.com https:&#x2F;&#x2F;www.youtube-nocookie.com;connect-src 'self';script-src 'self' 'self' 'unsafe-inline' 'wasm-unsafe-eval'"
     />
-
     <noscript><link rel="stylesheet" href="/no_js.css" /></noscript>
     <script type="text/javascript" src="/js/initializeTheme.min.js"></script>
     <script defer src="/js/themeSwitcher.min.js"></script>
   </head>
-
   <body>
     <header>
       <nav class="navbar">
         <div class="nav-title">
-          <a class="home-title" href="">SAC13</a>
+          <a class="home-title" href="/">SAC13</a>
         </div>
         <div class="nav-navs">
           <ul>
             <li>
               <a class="nav-links no-hover-padding" href="/intro/"> Intro </a>
             </li>
-
             <li>
               <a class="nav-links no-hover-padding" href="/calculator/">
                 Try it!
               </a>
             </li>
-
             <li>
               <a class="nav-links no-hover-padding" href="/faq/"> FAQ </a>
             </li>
@@ -81,7 +69,6 @@
         </div>
       </nav>
     </header>
-
     <div class="content">
       <div id="page-content">
         <main>
@@ -93,49 +80,39 @@
               text-transform: uppercase;
               padding: 7px;
             }
-
             #date_sub {
               font-style: italic;
               font-size: 0.8em;
             }
-
             .arrow {
               font-size: 1.5em;
               cursor: pointer;
               user-select: none;
             }
-
             .arrow.left {
               margin-right: 10px;
             }
-
             .arrow.right {
               margin-left: 10px;
             }
-
             .selected-header {
               text-decoration: underline;
             }
-
             .selected-day {
               background-color: var(--bg-3);
               text-decoration: underline;
               /* font-weight: bold; */
             }
-
             #sac13-thr th {
               font-weight: normal;
               font-size: 1em;
             }
-
             #sac13-thr .selected-header {
               text-decoration: none;
             }
-
             #sac13-thr .selected-header::after {
               content: "•";
             }
-
             #cal-container {
               margin-left: calc((100% - 100vw) / 3);
               margin-right: calc((100% - 100vw) / 3);
@@ -144,13 +121,11 @@
               gap: 50px;
               justify-content: center;
             }
-
             #control-container {
               display: flex;
               justify-content: center;
               text-align: center;
             }
-
             #today-button {
               padding: 10px;
               font-family: var(--sans-serif-font);
@@ -159,30 +134,24 @@
               background-color: var(--bg-0);
               cursor: pointer;
             }
-
             #today-button:hover {
               background-color: var(--bg-1);
             }
-
             #today-button:active {
               background-color: var(--bg-2);
             }
-
             table.cal-tab {
               user-select: none;
             }
-
             table.cal-tab td {
               width: 28px;
               height: 37px;
             }
-
             table.cal-tab th {
               width: 28px;
               height: 37px;
             }
           </style>
-
           <div id="control-container">
             <div>
               <span class="arrow left" id="arrowleft" title="yesterday"
@@ -199,38 +168,29 @@
                 ></i
               ></span>
               <div id="date_sub">&nbsp;</div>
-
               <div style="display: block; height: 0.75em"></div>
-
               <button id="today-button">Today</button>
-
               <div style="display: block; height: 0.75em"></div>
             </div>
           </div>
-
           <div id="cal-container">
             <div id="block-cal-sac13">
               <span style="display: block; height: 1em">
                 <span class="katex-display" id="ktexjs-sac13"> </span>
               </span>
-
               <div id="cal-sac13"></div>
             </div>
-
             <div id="block-cal-greg">
               <span style="display: block; height: 1em">
                 <span class="katex-display" id="ktexjs-greg"> </span>
               </span>
-
               <div id="cal-greg"></div>
             </div>
           </div>
-
           <script src="/sac13_commons.js"></script>
           <script src="/sac13_calculator.js"></script>
         </main>
       </div>
-
       <div id="button-container">
         <a
           href="#"
@@ -245,7 +205,6 @@
           </svg>
         </a>
       </div>
-
       <link rel="stylesheet" href="/katex.min.css" />
       <script defer src="/js/katex.min.js"></script>
       <span id="copy-success" class="hidden"> Copied! </span>
@@ -255,9 +214,7 @@
     <footer>
       <section>
         <nav class="socials nav-navs"></nav>
-
         <nav class="nav-navs"></nav>
-
         <div class="credits">
           <small>
             Powered by
