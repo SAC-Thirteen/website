@@ -324,11 +324,6 @@ function sac13_format(format, year, month, day) {
     return text;
   }
 
-  // render weekday only for sync days, because they are special
-  if (day && month && day === 29) {
-    result += textIfKatex("Syncday, ");
-  }
-
   // render day
   if (day && month) {
     result += `${nr_ord_format(format, day)}\\ `;

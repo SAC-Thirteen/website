@@ -13,7 +13,8 @@ async function render_date_after_initialization() {
     parsed.sac13_day,
   );
 
-  const formatted = `\\underline{\\text{Today in SAC13}}\\newline \\ \\newline \\Large{${sac13_katex}}`;
+  const title = parsed.sac13_day === 29 ? "Happy Sync Day!" : "Today in SAC13";
+  const formatted = `\\underline{\\text{${title}}}\\newline \\ \\newline \\Large{${sac13_katex}}`;
 
   render_katex("sac13-today", formatted);
 }
